@@ -6,7 +6,7 @@
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:48:23 by vsozonof          #+#    #+#             */
-/*   Updated: 2023/10/18 15:20:46 by vsozonof         ###   ########.fr       */
+/*   Updated: 2023/10/18 17:57:35 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		return (pr_error("Not enough arguments."));
 	else if (!(is_it_a_ber_file(argv)))
-		return (pr_error("Incorrect format (.ber is expected)."));
+		return (pr_error("Incorrect file format (.ber is expected)."));
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 		return (pr_error("Impossible to read the file."));
