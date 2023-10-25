@@ -6,7 +6,7 @@
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:48:23 by vsozonof          #+#    #+#             */
-/*   Updated: 2023/10/18 17:57:35 by vsozonof         ###   ########.fr       */
+/*   Updated: 2023/10/25 02:42:11 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,23 @@
 
 int	main(int argc, char **argv)
 {
-	int	fd;
+	int				fd;
+	t_game_handler	*ptr;
 
 	if (argc != 2)
 		return (pr_error("Not enough arguments."));
 	else if (!(is_it_a_ber_file(argv)))
 		return (pr_error("Incorrect file format (.ber is expected)."));
+	ptr = malloc(sizeof(t_game_handler));
+	if (!ptr)
+		return (pr_error("Allocation error."));
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 		return (pr_error("Impossible to read the file."));
-	if (!is_the_map_valid(fd))
-		return (0);
-	
-	// void	*mlx_ptr;
-	// void	*win_ptr;
-
-	// mlx_ptr = mlx_init();
-	// if (!mlx_ptr)
-	// 	return (1);
-	// win_ptr = mlx_new_window(mlx_ptr, 2000, 2000, "RIP Maelle");
-	// if (!win_ptr)
-	// 	return (free(mlx_ptr), 1);
-	// mlx_destroy_window(mlx_ptr, win_ptr);
-	// mlx_destroy_display(mlx_ptr);
-	// free(mlx_ptr);
+	if (!is_the_map_valid(fd, ptr))
+		return (free(ptr), 0);
+	game_manager(ptr);
+	mlx_loop(ptr->mlx);
+	free(ptr);
 	return (0);
 }

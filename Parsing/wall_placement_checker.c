@@ -6,7 +6,7 @@
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:41:34 by vsozonof          #+#    #+#             */
-/*   Updated: 2023/10/18 17:43:06 by vsozonof         ###   ########.fr       */
+/*   Updated: 2023/10/22 22:59:48 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,6 @@ int	wall_checker(char *map)
 
 int	are_placed_walls_valid(char *map, int n_line)
 {
-	int	i;
-	int	c;
-
-	i = 0;
-	c = 0;
 	if (!first_and_last_checker(map, n_line))
 		return (0);
 	else if (!middle_line_checker(map))
@@ -38,10 +33,8 @@ int	are_placed_walls_valid(char *map, int n_line)
 int	middle_line_checker(char *map)
 {
 	int	i;
-	int	c;
 
 	i = 0;
-	c = 0;
 	while (map[i])
 	{
 		while (map[i] && map[i] != '\n')
@@ -89,7 +82,7 @@ int	is_the_map_a_rectangle(char *map)
 	len = 0;
 	i = 0;
 	while (map[i])
-	{	
+	{
 		while (map[i] && map[i] != '\n')
 		{
 			if (lines == 0)

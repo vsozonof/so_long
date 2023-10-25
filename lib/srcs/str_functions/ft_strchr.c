@@ -6,11 +6,11 @@
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 17:26:20 by vsozonof          #+#    #+#             */
-/*   Updated: 2022/11/19 11:18:15 by vsozonof         ###   ########.fr       */
+/*   Updated: 2023/10/25 02:50:32 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

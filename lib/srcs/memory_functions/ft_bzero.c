@@ -6,11 +6,11 @@
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:31:15 by vsozonof          #+#    #+#             */
-/*   Updated: 2022/11/15 19:41:22 by vsozonof         ###   ########.fr       */
+/*   Updated: 2023/10/25 02:52:18 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

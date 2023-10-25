@@ -6,7 +6,7 @@
 #    By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/03 08:53:01 by vsozonof          #+#    #+#              #
-#    Updated: 2023/10/18 17:10:35 by vsozonof         ###   ########.fr        #
+#    Updated: 2023/10/24 20:26:57 by vsozonof         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,19 @@ COLOUR_GREEN =\033[0;32m
 COLOUR_END =\033[0m
 
 SRCS = main.c \
-	   Parsing/parsing_manager.c \
 	   Parsing/is_the_map_valid.c \
 	   Parsing/is_it_a_ber_file.c \
 	   Parsing/wall_placement_checker.c \
 	   Parsing/components_placement_checker.c \
+	   Parsing/valid_path_finder.c \
+	   Parsing/initialize_parsing_struct.c \
+	   Parsing/map_path_finder.c \
+	   Game/game_manager.c \
+	   Game/window_handler.c \
+	   Game/init_vars.c \
+	   Game/placer.c \
+	   Game/quit_game.c \
+	   Game/is_move_valid.c \
 
 
 SRCS_LIBFT 	= lib/libft.a \
