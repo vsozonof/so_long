@@ -6,7 +6,7 @@
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 23:21:21 by vsozonof          #+#    #+#             */
-/*   Updated: 2023/10/25 02:07:40 by vsozonof         ###   ########.fr       */
+/*   Updated: 2023/10/27 06:29:13 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	movement_manager(int key, t_game_handler *ptr)
 {
 	if (key == 65307)
 		end_program(ptr);
-	else if (key == 122)
+	else if (key == 119)
 		movement_handler_y(ptr, 'y', -1);
-	else if (key == 113)
+	else if (key == 97)
 		movement_handler_x(ptr, 'x', -1);
 	else if (key == 115)
 		movement_handler_y(ptr, 'y', 1);

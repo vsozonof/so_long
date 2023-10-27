@@ -6,7 +6,7 @@
 #    By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/03 08:53:01 by vsozonof          #+#    #+#              #
-#    Updated: 2023/10/24 20:26:57 by vsozonof         ###   ########.fr        #
+#    Updated: 2023/10/27 06:21:24 by vsozonof         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,11 +41,12 @@ SRCS = main.c \
 SRCS_LIBFT 	= lib/libft.a \
 
 
-all: init $(MLX_LIB) $(NAME)
+all: init $(NAME)
 
 init:
 		@echo "$(COLOUR_GREEN)****** STARTING COMPILATION ******$(COLOUR_END)"
 		make all -C ./lib
+		make -C $(MLX_DIR)
 
 .c.o:
 	$(CC) $(CFLAGS) -c -o $@ $< $(INCLUDES)
@@ -60,14 +61,16 @@ $(MLX_LIB):
 clean:
 		@echo "$(COLOUR_GREEN)****** INITIATING CLEAN  ******$(COLOUR_END)"
 		make clean -C ./lib
+		make clean -C $(MLX_DIR)
 		@echo "$(COLOUR_GREEN)******   CLEAN COMPLETE  ******$(COLOUR_END)"
 
 fclean: 
 		@echo "$(COLOUR_GREEN)****** INITIATING FCLEAN ******$(COLOUR_END)"
 		make fclean -C ./lib
+		make clean -C $(MLX_DIR)
 		$(RM) $(NAME)
 		@echo "$(COLOUR_GREEN)******  FCLEAN COMPLETE  ******$(COLOUR_END)"
 
 re: fclean all
 
-.PHONY: all clean fclean init re
+.PHONY: all clean fclean init re mlx
